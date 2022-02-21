@@ -1,9 +1,10 @@
 package io.leofalves.parkingcontrol.services;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import io.leofalves.parkingcontrol.models.ParkingSpotModel;
@@ -13,7 +14,7 @@ public interface ParkingSpotServiceInt {
 
 	ParkingSpotModel save(ParkingSpotModel parkingSpotModel);
 
-	List<ParkingSpotModel> findAll();
+	Page<ParkingSpotModel> findAll(Pageable pageable);
 
 	boolean existsByLicensePlateCar(String licensePlateCar);
 
